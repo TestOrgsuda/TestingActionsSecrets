@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-echo $ARG
+
+echo "Inside the script"
+echo $1
