@@ -31,6 +31,6 @@ jobs:
     steps:
     - shell: bash
       env:
-        SUPER_SECRET: ${{ secrets.NO_TEST_SECRET }}
+        SUPER_SECRET: ${{ secrets.TEST_SECRET }}
       run: |
         echo "$SUPER_SECRET"
