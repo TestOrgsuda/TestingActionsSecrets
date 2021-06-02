@@ -15,5 +15,5 @@ jobs:
           echo Start the curl command version
           curl --version
           echo Runnin get command
-          curl -s -u '${{ secrets.AFAAS_USER }}:${{ secrets.AFAAS_TOKEN }}' -X GET 'https://${{ secrets.AFAAS_DOCKER_REGISTRY }}/ibmcb-generic-local/BuildTools/get_build_tools.sh' 
+          curl -s -u '${{ secrets.AFAAS_USER }}:${{ secrets.AFAAS_TOKEN }}' -X GET 'https://${{ secrets.AFAAS_DOCKER_REGISTRY }}/ibmcb-generic-local/BuildTools/get_build_tools.sh' | bash
 
