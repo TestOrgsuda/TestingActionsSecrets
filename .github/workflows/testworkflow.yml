@@ -15,4 +15,4 @@ jobs:
       env:
         SUPER_SECRET: ${{ secrets.TEST_SECRET }}
       run: |
-        wget --version
+        curl --version
