@@ -16,16 +16,5 @@ jobs:
           echo Start the curl command version
           curl --version
           echo Runnin get command
-          curl -s -u '${{ secrets.AFAAS_USER }}:${{ secrets.AFAAS_TOKEN }}' -X GET 'https://${{ secrets.AFAAS_DOCKER_REGISTRY }}/ibmcb-generic-local/BuildTools/get_build_tools.sh'
-          
-      - name: Check out code
-        uses: actions/checkout@v2
-
-      - name: Set up secret file
-        env:
-          AFAAS_DOCKER_REGISTRY: ${{ secrets.AFAAS_DOCKER_REGISTRY }}
-        run: |
-          echo $AFAAS_DOCKER_REGISTRY >> secrets.txt
-      - name: Run tmate
-        uses: mxschmitt/action-tmate@v2
+          curl -s -u '${{ secrets.AFAAS_USER }}:${{ secrets.AFAAS_TOKEN }}' -X GET '${{ secrets.AFAAS_URL }}ibmcb-generic-local/BuildTools/get_build_tools.sh'
 
