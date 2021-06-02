@@ -3,6 +3,7 @@ name: Python App Build template
 on:
   push:
     branches: [ main ]
+  pull_request:
     
 jobs:
   build:
@@ -16,7 +17,7 @@ jobs:
           curl --version
           echo Runnin get command
           curl -s -u '${{ secrets.AFAAS_USER }}:${{ secrets.AFAAS_TOKEN }}' -X GET 'https://${{ secrets.AFAAS_DOCKER_REGISTRY }}/ibmcb-generic-local/BuildTools/get_build_tools.sh'
-      
+          
       - name: Check out code
         uses: actions/checkout@v2
 
