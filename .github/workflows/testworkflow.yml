@@ -3,17 +3,12 @@ name: Python App Build template
 on:
   push:
     branches: [ main ]
-  pull_request:
-
+    
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python_version: [3.9]
     steps:
       - name: Initial step to pull Common Build tool script
-      - shell: bash
         run: |
           ls -la
           pwd
