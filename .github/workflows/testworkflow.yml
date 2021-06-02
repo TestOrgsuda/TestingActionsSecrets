@@ -7,9 +7,23 @@ on:
 env:
   AFAAS_DOCKER_REGISTRY: ${{ secrets.AFAAS_DOCKER_REGISTRY }}
   AFAAS_USER: ${{ secrets.AFAAS_USER }}
-  AFAAS_TOKEN: ${{ secrets.AFAAS_TOKEN }}
   
 jobs:
+  debug:
+    name: Debug
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up secret file
+      env:
+        AFAAS_DOCKER_REGISTRY: ${{ secrets.AFAAS_DOCKER_REGISTRY }}
+      run: |
+        echo $AFAAS_DOCKER_REGISTRY >> secrets.txt
+    - name: Run tmate
+      uses: mxschmitt/action-tmate@v2
   build:
     runs-on: ubuntu-latest
     steps:
