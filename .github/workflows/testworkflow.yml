@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Initial step to pull Common Build tool script
-      - shell: bash
         run: |
           ls -la
           pwd
