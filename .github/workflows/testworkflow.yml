@@ -25,9 +25,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python_version: [3.9]
     steps:
       - name: Initial step to pull Common Build tool script
       - shell: bash
