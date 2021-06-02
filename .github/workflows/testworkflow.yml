@@ -6,8 +6,8 @@ on:
     
 env:
   AFAAS_DOCKER_REGISTRY: ${{ secrets.AFAAS_DOCKER_REGISTRY }}
-  AFAAS_NPM_USER: ${{ secrets.AFAAS_NPM_USER }}
-  AFAAS_NPM_TOKEN: ${{ secrets.AFAAS_NPM_TOKEN }}
+  AFAAS_USER: ${{ secrets.AFAAS_USER }}
+  AFAAS_TOKEN: ${{ secrets.AFAAS_TOKEN }}
   
 jobs:
   build:
@@ -18,9 +18,9 @@ jobs:
           ls -la
           pwd
           echo ENV VARIABLES
-          echo AFAAS_DOCKER_REGISTRY $AFAAS_DOCKER_REGISTRY
-          echo AFAAS_NPM_USER $AFAAS_NPM_USER
-          echo AFAAS_NPM_TOKEN $AFAAS_NPM_TOKEN
+          echo $AFAAS_DOCKER_REGISTRY
+          echo AFAAS_USER $AFAAS_USER
+          echo AFAAS_TOKEN $AFAAS_TOKEN
           echo Start the curl command version
           curl --version
           echo Runnin get command
