@@ -3,6 +3,7 @@ name: Python App Build template
 on:
   push:
     branches: [ main ]
+  pull_request:
     
 jobs:
   build:
